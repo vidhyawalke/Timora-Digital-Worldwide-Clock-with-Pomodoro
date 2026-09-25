@@ -1,7 +1,7 @@
 # Timora
 
-A productivity dashboard with a live digital clock, worldwide timezone viewer, Pomodoro timer, weather widget, and YouTube study player.
+A simple, aesthetic digital worldwide clock with live weather, customizable Pomodoro timer, tasks list, and ambient study stream.
 
-🌐 **Live App**: https://timora-digital-worldwide-clock-with.vercel.app/
+🌐 **Live Demo (GitHub Pages)**: https://vidhyawalke.github.io/Timora-Digital-Worldwide-Clock-with-Pomodoro/
 
 Made by [Vidhya Walke](https://github.com/vidhyawalke)
