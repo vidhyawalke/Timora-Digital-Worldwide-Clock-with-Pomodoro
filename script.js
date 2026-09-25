@@ -4,6 +4,7 @@
    ======================================================== */
 
 // --- 1. POPULAR HUBS & CURATED WALLPAPERS DATA ---
+// Added popular world hubs and high-resolution Unsplash wallpapers for quick user selection.
 
 const POPULAR_HUBS = [
   { name: 'London', country: 'United Kingdom', code: 'gb', tz: 'Europe/London', lat: 51.5074, lon: -0.1278 },
@@ -27,9 +28,8 @@ const CURATED_WALLPAPERS = [
   { title: 'Nordic Interior Study', url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2000&auto=format&fit=crop' }
 ];
 
-
-
 // --- 2. LANDING SCREEN LOGIC ---
+// Added landing screen auto-dismiss and click handler to smooth entrance into workspace.
 
 const landingScreen = document.getElementById('landing-screen');
 const btnEnter = document.getElementById('btn-enter');
@@ -52,8 +52,8 @@ if (sessionStorage.getItem('timora_landing_seen') === 'true') {
   setTimeout(dismissLanding, 1800);
 }
 
-
 // --- 3. DARK / LIGHT THEME TOGGLE ---
+// Added theme toggle button and localStorage saving to remember user preference.
 
 const btnThemeToggle = document.getElementById('btn-theme-toggle');
 let isDarkMode = localStorage.getItem('timora_dark_mode') === 'true';
