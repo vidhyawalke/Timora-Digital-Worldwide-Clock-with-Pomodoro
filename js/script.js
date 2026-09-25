@@ -4,6 +4,7 @@
    ======================================================== */
 
 // --- 1. POPULAR HUBS & CURATED WALLPAPERS DATA ---
+// Added popular world hubs and high-resolution Unsplash wallpapers for quick user selection.
 
 const POPULAR_HUBS = [
   { name: 'London', country: 'United Kingdom', code: 'gb', tz: 'Europe/London', lat: 51.5074, lon: -0.1278 },
@@ -27,19 +28,8 @@ const CURATED_WALLPAPERS = [
   { title: 'Nordic Interior Study', url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2000&auto=format&fit=crop' }
 ];
 
-const BACKUP_QUOTES = [
-  { text: "Discipline is choosing between what you want now and what you want most.", author: "Abraham Lincoln" },
-  { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
-  { text: "Focus on being productive instead of busy.", author: "Tim Ferriss" },
-  { text: "Small daily improvements over time lead to stunning results.", author: "Robin Sharma" },
-  { text: "Action is the foundational key to all success.", author: "Pablo Picasso" },
-  { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
-  { text: "You don't have to be great to start, but you have to start to be great.", author: "Zig Ziglar" },
-  { text: "Deep work is the ability to focus without distraction.", author: "Cal Newport" }
-];
-
-
 // --- 2. LANDING SCREEN LOGIC ---
+// Added landing screen auto-dismiss and click handler to smooth entrance into workspace.
 
 const landingScreen = document.getElementById('landing-screen');
 const btnEnter = document.getElementById('btn-enter');
@@ -62,8 +52,8 @@ if (sessionStorage.getItem('timora_landing_seen') === 'true') {
   setTimeout(dismissLanding, 1800);
 }
 
-
 // --- 3. DARK / LIGHT THEME TOGGLE ---
+// Added theme toggle button and localStorage saving to remember user preference.
 
 const btnThemeToggle = document.getElementById('btn-theme-toggle');
 let isDarkMode = localStorage.getItem('timora_dark_mode') === 'true';
@@ -683,32 +673,13 @@ ytPresetButtons.forEach((btn) => {
 });
 
 
-// --- 9. DAILY MOTIVATIONAL QUOTE BAR ---
+// --- 9. MOTIVATIONAL QUOTE BAR ---
 
 const quoteTextEl = document.getElementById('quote-text');
 const quoteAuthorEl = document.getElementById('quote-author');
-const btnRefreshQuote = document.getElementById('btn-refresh-quote');
-
-async function fetchQuote() {
-  try {
-    const res = await fetch('https://dummyjson.com/quotes/random');
-    if (res.ok) {
-      const data = await res.json();
-      if (data && data.quote) {
-        quoteTextEl.textContent = `“${data.quote}”`;
-        quoteAuthorEl.textContent = `— ${data.author || 'Anonymous'}`;
-        return;
-      }
-    }
-  } catch (e) {
-    // API network error, use backup quote
-  }
-
-  // Fallback quote from local array
-  const random = BACKUP_QUOTES[Math.floor(Math.random() * BACKUP_QUOTES.length)];
-  quoteTextEl.textContent = `“${random.text}”`;
-  quoteAuthorEl.textContent = `— ${random.author}`;
+if (quoteTextEl) {
+  quoteTextEl.textContent = '“The secret of getting ahead is getting started.”';
 }
-
-btnRefreshQuote.addEventListener('click', fetchQuote);
-fetchQuote();
+if (quoteAuthorEl) {
+  quoteAuthorEl.textContent = '— Mark Twain';
+}

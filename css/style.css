@@ -744,18 +744,38 @@ body.has-custom-bg .wallpaper-overlay {
   margin-top: auto;
   background: var(--card-bg);
   border-top: 1px solid var(--card-border);
-  padding: 0.75rem 1.5rem;
+  padding: 0.85rem 1.5rem;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 0.4rem;
+  width: 100%;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.quote-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.88rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .footer-link-wrap {
   font-size: 0.76rem;
   text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-live-link {
@@ -769,17 +789,6 @@ body.has-custom-bg .wallpaper-overlay {
 .footer-live-link:hover {
   text-decoration: underline;
   opacity: 1;
-}
-
-.quote-content {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  max-width: 900px;
-  text-align: center;
-  font-size: 0.88rem;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .quote-icon {

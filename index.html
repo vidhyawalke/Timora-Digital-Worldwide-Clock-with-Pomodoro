@@ -5,25 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timora - Digital Worldwide Clock with Pomodoro</title>
   <meta name="description" content="A simple, aesthetic digital worldwide clock with live weather, customizable Pomodoro timer, tasks list, and study stream.">
-  <link rel="icon" type="image/png" href="./Timora_Logo_landing.png">
+  <link rel="icon" type="image/png" href="./assets/Timora_Logo_landing.png">
   
-  <!-- Google Fonts -->
+  <!-- Added Google Fonts for clean and modern typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   
+  <!-- Added cache-control meta tags to prevent browsers from caching stale assets -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  
+  <!-- Added canonical URL and OpenGraph metadata for SEO and social sharing -->
   <link rel="canonical" href="https://vidhyawalke.github.io/Timora-Digital-Worldwide-Clock-with-Pomodoro/">
   <meta property="og:url" content="https://vidhyawalke.github.io/Timora-Digital-Worldwide-Clock-with-Pomodoro/">
   
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="./style.css">
+  <!-- Added main stylesheet with version query for cache-busting -->
+  <link rel="stylesheet" href="./css/style.css?v=1.3">
 </head>
 <body>
 
-  <!-- Landing Splash Screen -->
+  <!-- Added landing splash screen overlay to introduce the brand before entering the workspace -->
   <div id="landing-screen" class="landing-screen" title="Click anywhere to enter">
     <div class="landing-content">
-      <img src="./Timora_Logo_landing.png" alt="Timora Logo" class="landing-logo">
+      <img src="./assets/Timora_Logo_landing.png" alt="Timora Logo" class="landing-logo">
       <h1 class="landing-title">Timora</h1>
       <p class="landing-tagline">FOCUS &middot; FLOW &middot; FINISH</p>
       <div class="landing-loader-bar">
@@ -33,25 +39,25 @@
     </div>
   </div>
 
-  <!-- Background Scrim (for custom wallpapers) -->
+  <!-- Added background scrim overlay to preserve card text contrast over custom wallpapers -->
   <div id="wallpaper-overlay" class="wallpaper-overlay"></div>
 
-  <!-- App Wrapper -->
+  <!-- Added app layout container to hold header, main workspace, and footer -->
   <div class="app-layout">
 
-    <!-- Top Navigation Bar -->
+    <!-- Added top navigation bar containing branding, world clock chips, and controls -->
     <header class="navbar">
       <div class="nav-brand">
-        <img src="./Timora_Logo_landing.png" alt="Timora" class="brand-logo">
+        <img src="./assets/Timora_Logo_landing.png" alt="Timora" class="brand-logo">
         <div class="brand-text">
           <span class="brand-name">Timora</span>
           <span class="brand-sub">Worldwide Focus</span>
         </div>
       </div>
 
-      <!-- Worldwide Clocks Strip -->
+      <!-- Added worldwide clocks strip to display local and foreign timezones -->
       <div class="clocks-container">
-        <!-- Local Clock Card -->
+        <!-- Added local clock card to display user's live digital time, date, and weather -->
         <div class="clock-chip local-clock">
           <div class="clock-chip-top">
             <span class="city-name" id="local-city">Local</span>
@@ -61,16 +67,16 @@
           <div class="clock-chip-date" id="local-date">--</div>
         </div>
 
-        <!-- Container for dynamically added foreign clocks -->
+        <!-- Added container to dynamically render user-added foreign world clocks -->
         <div id="foreign-clocks-list" class="foreign-clocks-list"></div>
 
-        <!-- Add Clock Button -->
+        <!-- Added button to open modal for adding new international city clocks -->
         <button id="btn-open-add-clock" class="btn-action-icon" title="Add Worldwide Clock">
           <span>+ Add Clock</span>
         </button>
       </div>
 
-      <!-- Nav Actions (Wallpaper & Theme Toggle) -->
+      <!-- Added quick navigation action buttons for wallpaper selection and dark mode toggle -->
       <div class="nav-actions">
         <button id="btn-open-wallpaper" class="btn-nav" title="Change Background">
           🖼️ Wallpaper
@@ -81,13 +87,13 @@
       </div>
     </header>
 
-    <!-- Main Workspace (Two Columns) -->
+    <!-- Added main workspace with a two-column responsive grid layout -->
     <main class="main-workspace">
       
-      <!-- Left Column: Pomodoro Timer & Tasks -->
+      <!-- Added left column containing Pomodoro timer and task checklist cards -->
       <div class="workspace-col col-left">
         
-        <!-- Pomodoro Focus Timer Card -->
+        <!-- Added Pomodoro focus timer card to manage study intervals and rest breaks -->
         <section class="card pomodoro-card">
           <div class="card-header">
             <h2>Pomodoro Timer</h2>
@@ -98,7 +104,7 @@
             </div>
           </div>
 
-          <!-- Presets -->
+          <!-- Added quick preset buttons for Work, Study, Read, Code, Breaks, and Custom -->
           <div class="preset-buttons">
             <button class="btn-preset active" data-preset="work" data-min="25" data-sec="0">Work (25m)</button>
             <button class="btn-preset" data-preset="study" data-min="45" data-sec="0">Study (45m)</button>
@@ -109,7 +115,7 @@
             <button class="btn-preset" data-preset="custom">Custom</button>
           </div>
 
-          <!-- Custom Time Inputs (Hidden by default, shown when custom preset selected) -->
+          <!-- Added custom duration inputs to allow custom hours, minutes, and seconds -->
           <div id="custom-time-row" class="custom-time-row hidden">
             <label>
               Hours:
@@ -126,20 +132,20 @@
             <button id="btn-apply-custom" class="btn-small btn-primary">Set</button>
           </div>
 
-          <!-- Big Countdown Display -->
+          <!-- Added large digital countdown display box with active status label -->
           <div class="timer-display-box">
             <span id="timer-status-label" class="timer-status-badge">Work Session</span>
             <div id="timer-display" class="timer-display">25:00</div>
           </div>
 
-          <!-- Timer Action Buttons -->
+          <!-- Added controls for starting, pausing, and resetting the countdown timer -->
           <div class="timer-controls">
             <button id="btn-timer-start" class="btn-primary btn-large">Start</button>
             <button id="btn-timer-reset" class="btn-secondary btn-large">Reset</button>
           </div>
         </section>
 
-        <!-- Tasks Board Card -->
+        <!-- Added tasks board card to let users organize and complete daily to-do items -->
         <section class="card tasks-card">
           <div class="card-header">
             <div class="tasks-title-wrap">
@@ -149,22 +155,20 @@
             <button id="btn-toggle-task-form" class="btn-small">+ Add Task</button>
           </div>
 
-          <!-- Add Task Form -->
+          <!-- Added inline form for typing and submitting new tasks -->
           <form id="task-form" class="task-form hidden">
             <input type="text" id="task-input" placeholder="What are you working on?" required autocomplete="off">
             <button type="submit" class="btn-primary">Add</button>
             <button type="button" id="btn-cancel-task" class="btn-secondary">Cancel</button>
           </form>
 
-          <!-- Task List -->
-          <ul id="task-list" class="task-list">
-            <!-- Dynamically populated tasks -->
-          </ul>
+          <!-- Added task list container to render active and completed checklist items -->
+          <ul id="task-list" class="task-list"></ul>
           <div id="no-tasks-msg" class="no-tasks-msg">No tasks yet. Click "+ Add Task" to begin.</div>
         </section>
       </div>
 
-      <!-- Right Column: YouTube Study Stream -->
+      <!-- Added right column containing the ambient YouTube study stream player -->
       <div class="workspace-col col-right">
         <section class="card youtube-card">
           <div class="card-header">
@@ -172,25 +176,25 @@
             <button id="btn-toggle-yt-input" class="btn-small">Custom Link</button>
           </div>
 
-          <!-- Quick Channel Presets -->
+          <!-- Added quick channel preset buttons for Chill Beats, Rain, Cafe, and Synth -->
           <div class="yt-preset-buttons">
-            <button class="btn-yt-preset active" data-vid="jfKfPfyJRdk">☕ Lofi Girl</button>
+            <button class="btn-yt-preset active" data-vid="KsXttVfPVQM">🎧 Chill Beats</button>
             <button class="btn-yt-preset" data-vid="DWcJFNfaw9c">🌧️ Rain Sounds</button>
-            <button class="btn-yt-preset" data-vid="5qap5aO4i9A">📚 Cozy Cafe</button>
+            <button class="btn-yt-preset" data-vid="5qap5aO4i9A">☕ Cozy Cafe</button>
             <button class="btn-yt-preset" data-vid="4xDzrJKXOOY">🌌 Deep Synth</button>
           </div>
 
-          <!-- Custom YouTube URL Form (toggled) -->
+          <!-- Added custom video link input form to allow playing any YouTube study track -->
           <form id="yt-form" class="yt-form hidden">
             <input type="text" id="yt-url-input" placeholder="Paste YouTube link or Video ID..." autocomplete="off">
             <button type="submit" class="btn-primary">Play</button>
           </form>
 
-          <!-- 16:9 Video Player -->
+          <!-- Added responsive 16:9 iframe video container for uninterrupted playback -->
           <div class="video-container">
             <iframe 
               id="yt-iframe"
-              src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=0&rel=0&modestbranding=1" 
+              src="https://www.youtube.com/embed/KsXttVfPVQM?autoplay=0&rel=0&modestbranding=1" 
               title="YouTube Study Player" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -202,22 +206,20 @@
 
     </main>
 
-    <!-- Daily Quote Footer Strip -->
+    <!-- Added centered footer bar to display inspirational quote and developer attribution -->
     <footer class="quote-bar">
       <div class="quote-content">
-        <span class="quote-icon">✨</span>
-        <span id="quote-text" class="quote-text">“Discipline is choosing between what you want now and what you want most.”</span>
-        <span id="quote-author" class="quote-author">— Abraham Lincoln</span>
-        <button id="btn-refresh-quote" class="btn-icon" title="Refresh inspirational quote">🔄</button>
+        <span id="quote-text" class="quote-text">“The secret of getting ahead is getting started.”</span>
+        <span id="quote-author" class="quote-author">— Mark Twain</span>
       </div>
       <div class="footer-link-wrap">
-        <a href="https://vidhyawalke.github.io/Timora-Digital-Worldwide-Clock-with-Pomodoro/" target="_blank" class="footer-live-link">🔗 Live Website: vidhyawalke.github.io/Timora-Digital-Worldwide-Clock-with-Pomodoro</a>
+        Developed by <a href="https://github.com/vidhyawalke/Timora-Digital-Worldwide-Clock-with-Pomodoro" target="_blank" class="footer-live-link">@vidhyawalke</a>
       </div>
     </footer>
 
   </div>
 
-  <!-- Modal: Add Worldwide Clock -->
+  <!-- Added modal dialog for searching and selecting global world cities -->
   <div id="modal-clock" class="modal-backdrop hidden">
     <div class="modal-box">
       <div class="modal-header">
@@ -227,10 +229,8 @@
       <div class="modal-body">
         <p class="modal-hint">Select a popular hub or search any global city:</p>
         
-        <!-- Popular Hubs Grid -->
-        <div class="popular-hubs-grid" id="popular-hubs-grid">
-          <!-- Hub buttons added by JS -->
-        </div>
+        <!-- Added popular hub shortcut buttons for London, New York, Tokyo, Dubai, etc. -->
+        <div class="popular-hubs-grid" id="popular-hubs-grid"></div>
 
         <div class="modal-search-row">
           <input type="text" id="input-city-search" placeholder="Type city name (e.g., Paris, Berlin, Seoul)..." autocomplete="off">
@@ -240,7 +240,7 @@
     </div>
   </div>
 
-  <!-- Modal: Wallpaper Picker -->
+  <!-- Added modal dialog for choosing curated backgrounds, URLs, or local image uploads -->
   <div id="modal-wallpaper" class="modal-backdrop hidden">
     <div class="modal-box">
       <div class="modal-header">
@@ -250,14 +250,12 @@
       <div class="modal-body">
         <p class="modal-hint">Choose from curated wallpapers or use your own:</p>
         
-        <!-- Curated Wallpapers Grid -->
-        <div class="wallpapers-grid" id="wallpapers-grid">
-          <!-- Populated by JS -->
-        </div>
+        <!-- Added curated wallpapers thumbnail grid -->
+        <div class="wallpapers-grid" id="wallpapers-grid"></div>
 
         <hr class="modal-divider">
 
-        <!-- Custom URL Input -->
+        <!-- Added custom background image URL form -->
         <form id="form-custom-bg" class="modal-form-row">
           <input type="url" id="input-bg-url" placeholder="Paste an image URL..." autocomplete="off">
           <button type="submit" class="btn-primary">Apply</button>
@@ -274,7 +272,21 @@
     </div>
   </div>
 
-  <!-- Main JavaScript File -->
-  <script src="./script.js"></script>
+  <!-- Added main JavaScript file with version query for cache-busting -->
+  <script src="./js/script.js?v=1.3"></script>
+
+  <!-- Added cache cleanup script to unregister legacy service workers and clear browser storage -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs) {
+        for (var r of regs) { r.unregister(); }
+      });
+      if (window.caches) {
+        caches.keys().then(function(names) {
+          for (var n of names) { caches.delete(n); }
+        });
+      }
+    }
+  </script>
 </body>
 </html>
