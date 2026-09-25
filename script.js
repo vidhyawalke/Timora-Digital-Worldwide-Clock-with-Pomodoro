@@ -676,6 +676,10 @@ ytPresetButtons.forEach((btn) => {
 // --- 9. MOTIVATIONAL QUOTE BAR ---
 
 const quoteTextEl = document.getElementById('quote-text');
+const quoteAuthorEl = document.getElementById('quote-author');
 if (quoteTextEl) {
-  quoteTextEl.textContent = '“Progress over perfection.”';
+  quoteTextEl.textContent = '“The secret of getting ahead is getting started.”';
+}
+if (quoteAuthorEl) {
+  quoteAuthorEl.textContent = '— Mark Twain';
 }
