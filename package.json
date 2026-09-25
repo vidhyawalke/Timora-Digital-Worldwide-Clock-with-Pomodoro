@@ -1,22 +1,6 @@
 {
   "name": "digital-worldwide-clock-with-pomodoro",
-  "private": true,
   "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "lucide-react": "^1.16.0",
-    "motion": "^13.1.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "gh-pages": "^6.1.1",
-    "vite": "^5.4.2"
-  }
+  "description": "Timora - Digital Worldwide Clock with Pomodoro",
+  "private": true
 }
