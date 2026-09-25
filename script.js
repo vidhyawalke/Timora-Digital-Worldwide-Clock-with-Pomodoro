@@ -27,16 +27,6 @@ const CURATED_WALLPAPERS = [
   { title: 'Nordic Interior Study', url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2000&auto=format&fit=crop' }
 ];
 
-const BACKUP_QUOTES = [
-  { text: "The Pomodoro Technique was created to work with time, not against it.", author: "Francesco Cirillo" },
-  { text: "One Pomodoro at a time. One task at a time. One goal at a time.", author: "Francesco Cirillo" },
-  { text: "Focus is the art of knowing what to ignore.", author: "Francesco Cirillo" },
-  { text: "Discipline is choosing between what you want now and what you want most.", author: "Abraham Lincoln" },
-  { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
-  { text: "Focus on being productive instead of busy.", author: "Tim Ferriss" },
-  { text: "Small daily improvements over time lead to stunning results.", author: "Robin Sharma" },
-  { text: "Deep work is the ability to focus without distraction.", author: "Cal Newport" }
-];
 
 
 // --- 2. LANDING SCREEN LOGIC ---
@@ -683,36 +673,9 @@ ytPresetButtons.forEach((btn) => {
 });
 
 
-// --- 9. DAILY MOTIVATIONAL QUOTE BAR ---
+// --- 9. MOTIVATIONAL QUOTE BAR ---
 
 const quoteTextEl = document.getElementById('quote-text');
-const quoteAuthorEl = document.getElementById('quote-author');
-const btnRefreshQuote = document.getElementById('btn-refresh-quote');
-
-async function fetchQuote() {
-  try {
-    const res = await fetch('https://dummyjson.com/quotes/random');
-    if (res.ok) {
-      const data = await res.json();
-      if (data && data.quote) {
-        quoteTextEl.textContent = `“${data.quote}”`;
-        quoteAuthorEl.textContent = `— ${data.author || 'Anonymous'}`;
-        return;
-      }
-    }
-  } catch (e) {
-    // API network error, use backup quote
-  }
-
-  // Fallback quote from local array
-  const random = BACKUP_QUOTES[Math.floor(Math.random() * BACKUP_QUOTES.length)];
-  quoteTextEl.textContent = `“${random.text}”`;
-  quoteAuthorEl.textContent = `— ${random.author}`;
+if (quoteTextEl) {
+  quoteTextEl.textContent = '“Progress over perfection.”';
 }
-
-// Initial quote is by the inventor of Pomodoro: Francesco Cirillo
-quoteTextEl.textContent = `“The Pomodoro Technique was created to work with time, not against it.”`;
-quoteAuthorEl.textContent = `— Francesco Cirillo`;
-
-// Clicking refresh button shuffles with new quotes from API or curated list
-btnRefreshQuote.addEventListener('click', fetchQuote);
