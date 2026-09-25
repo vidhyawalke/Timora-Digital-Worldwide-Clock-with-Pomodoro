@@ -28,13 +28,13 @@ const CURATED_WALLPAPERS = [
 ];
 
 const BACKUP_QUOTES = [
+  { text: "The Pomodoro Technique was created to work with time, not against it.", author: "Francesco Cirillo" },
+  { text: "One Pomodoro at a time. One task at a time. One goal at a time.", author: "Francesco Cirillo" },
+  { text: "Focus is the art of knowing what to ignore.", author: "Francesco Cirillo" },
   { text: "Discipline is choosing between what you want now and what you want most.", author: "Abraham Lincoln" },
   { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
   { text: "Focus on being productive instead of busy.", author: "Tim Ferriss" },
   { text: "Small daily improvements over time lead to stunning results.", author: "Robin Sharma" },
-  { text: "Action is the foundational key to all success.", author: "Pablo Picasso" },
-  { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
-  { text: "You don't have to be great to start, but you have to start to be great.", author: "Zig Ziglar" },
   { text: "Deep work is the ability to focus without distraction.", author: "Cal Newport" }
 ];
 
@@ -710,5 +710,9 @@ async function fetchQuote() {
   quoteAuthorEl.textContent = `— ${random.author}`;
 }
 
+// Initial quote is by the inventor of Pomodoro: Francesco Cirillo
+quoteTextEl.textContent = `“The Pomodoro Technique was created to work with time, not against it.”`;
+quoteAuthorEl.textContent = `— Francesco Cirillo`;
+
+// Clicking refresh button shuffles with new quotes from API or curated list
 btnRefreshQuote.addEventListener('click', fetchQuote);
-fetchQuote();
