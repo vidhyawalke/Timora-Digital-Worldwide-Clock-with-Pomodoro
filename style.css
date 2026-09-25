@@ -747,9 +747,28 @@ body.has-custom-bg .wallpaper-overlay {
   padding: 0.75rem 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.4rem;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.footer-link-wrap {
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+.footer-live-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-live-link:hover {
+  text-decoration: underline;
+  opacity: 1;
 }
 
 .quote-content {
