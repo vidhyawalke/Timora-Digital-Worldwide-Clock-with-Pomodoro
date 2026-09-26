@@ -412,7 +412,7 @@ function updateTimerDisplay() {
   timerDisplay.textContent = formatTime(secondsRemaining);
   document.title = timerRunning 
     ? `(${formatTime(secondsRemaining)}) Timora Focus` 
-    : 'Timora - Digital Worldwide Clock with Pomodoro';
+    : 'Timora — Aesthetic Pomodoro Timer & Worldwide Clock with Ambient Study Player';
 }
 
 // Play pleasant Web Audio bell chime on timer completion

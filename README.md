@@ -1,4 +1,4 @@
-# Timora — Digital Worldwide Clock with Pomodoro
+# Timora — Aesthetic Pomodoro Timer & Worldwide Clock with Ambient Study Player
 
 A beautifully crafted, browser-based focus workspace — no sign-up, no server, no data ever leaves your device.
 
