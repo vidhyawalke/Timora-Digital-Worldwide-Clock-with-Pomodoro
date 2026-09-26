@@ -1,8 +1,29 @@
-﻿# Timora — Digital Worldwide Clock with Pomodoro
+# Timora — Digital Worldwide Clock with Pomodoro
 
 A beautifully crafted, browser-based focus workspace — no sign-up, no server, no data ever leaves your device.
 
 🌐 **Live Demo**: [vidhyawalke.github.io/Pomodoro-Timer](https://vidhyawalke.github.io/Pomodoro-Timer/)
+
+---
+
+## What the Project Does
+
+Staying focused while studying or working across different time zones often leads to juggling scattered tools, separate timers, and distracting browser tabs, which makes it hard to maintain a steady productivity flow over time.
+
+The goal was to build a clean, distraction-free web application where anyone can track international time zones, run customizable Pomodoro focus intervals, manage daily tasks, and stream ambient study music without relying on external services or creating an account.
+
+The app was built using Vanilla JavaScript, HTML5, and CSS3. It lets users monitor multiple worldwide clocks with live weather, configure Pomodoro work and break sessions, manage a persistent task checklist, and enjoy ambient study soundscapes or custom wallpapers. All data is saved directly in the browser using local storage.
+
+Users get a clear view of their time, stay disciplined during work and study sprints, and track task progress effortlessly, all without sharing any personal data with a remote server.
+
+---
+
+### STAR Method Breakdown
+
+- **Situation**: Remote learners and professionals frequently struggle with fragmented focus due to switching between disconnected apps for world clocks, Pomodoro timers, to-do checklists, and background audio.
+- **Task**: Build a lightweight, unified, and aesthetically pleasing focus workspace that combines global timekeeping, interval timers, task management, and ambient audio into a single seamless interface with zero required setup.
+- **Action**: Engineered an accessible, client-side web application using HTML5, modern CSS3 design tokens, and modular Vanilla JavaScript. Integrated the `Intl.DateTimeFormat` API for accurate international timezones, Open-Meteo API for real-time weather updates, Web Audio API for subtle end-of-session chimes, an embedded YouTube player for ambient study streams, and browser `LocalStorage` for instant persistence.
+- **Result**: Produced a fast, responsive, privacy-first productivity dashboard that operates entirely client-side, loads instantly, works offline, and keeps users focused and organized without data collection.
 
 ---
 
